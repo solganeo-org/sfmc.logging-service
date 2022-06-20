@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Custom Journey Builder Activity</title>
+
+    <link rel="stylesheet" type="text/css" href="vendor/salesforce-lightning/assets/styles/salesforce-lightning-design-system.min.css" />
+
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/require.js"></script>
+    <script type="text/javascript">
+      (function () {
+        var config = {
+          baseUrl: "js",
+        };
+
+        var dependencies = ["customActivity"];
+
+        require(config, dependencies);
+      })();
+    </script>
+
+    <!--Styles-->
+    <style type="text/css">
+      body {
+        padding: 20px;
+        margin: 0;
+      }
+      .step {
+        display: none;
+      }
+      #step1 {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- Spinner -->
+      <div class="spinner" style="display: none;">
+        <div class="demo-only" >
+          <div role="status" class="spinner-custom slds-spinner slds-spinner_medium slds-spinner_brand">
+            <span class="slds-assistive-text">Loading</span>
+            <div class="slds-spinner__dot-a"></div>
+            <div class="slds-spinner__dot-b"></div>
+          </div>
+        </div>
+      </div>
+
+    <div>
+
+      Logging
+
+    </div>
+  </body>
+</html> 

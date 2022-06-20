@@ -1,0 +1,109 @@
+{
+  "workflowApiVersion": "1.1",
+  "metaData": {
+    "icon": "images/log.png",
+    "category": "custom"
+  },
+  "type": "REST",
+  "lang": {
+    "en-US": {
+      "name": "Logging Service",
+      "description": "Logging Service"
+    }
+  },
+  "arguments": {
+    "execute": {
+      "inArguments": [],
+      "outArguments": [
+        {
+          "foundSignupDate": ""
+        }
+      ],
+      "url": "https://69e0-80-15-110-62.ngrok.io/sfmc/execute",
+      "verb": "POST",
+      "body": "",
+      "header": "",
+      "format": "json",
+      "useJwt": true,
+      "timeout": 10000
+    }
+  },
+  "configurationArguments": {
+    "save": {
+      "url": "https://69e0-80-15-110-62.ngrok.io/sfmc/save",
+      "verb": "POST",
+      "useJwt": true
+    },
+    "publish": {
+      "url": "https://69e0-80-15-110-62.ngrok.io/sfmc/publish",
+      "verb": "POST",
+      "useJwt": true
+    },
+    "validate": {
+      "url": "https://69e0-80-15-110-62.ngrok.io/sfmc/validate",
+      "verb": "POST",
+      "useJwt": true
+    },
+    "stop": {
+      "url": "https://69e0-80-15-110-62.ngrok.io/sfmc/stop",
+      "verb": "POST",
+      "useJwt": true
+    }
+  },
+  "userInterfaces": {
+    "configModal": {
+      "height": 620,
+      "width": 800,
+      "fullscreen": false
+    }
+  },
+  "outcomes": [
+    {
+      "arguments": {
+        "branchResult": "sent"
+      },
+      "metaData": {
+        "label": "Sent"
+      }
+    },
+    {
+      "arguments": {
+        "branchResult": "notsent"
+      },
+      "metaData": {
+        "label": "Not Sent"
+      }
+    }
+  ],
+  "schema": {
+    "arguments": {
+      "execute": {
+        "inArguments": [
+          {
+            "phoneNumber": {
+              "dataType": "Phone",
+              "isNullable": false,
+              "direction": "in"
+            }
+          },
+          {
+            "emailAddress": {
+              "dataType": "Email",
+              "isNullable": false,
+              "direction": "in"
+            }
+          }
+        ],
+        "outArguments": [
+          {
+            "foundSignupDate": {
+              "dataType": "Date",
+              "direction": "out",
+              "access": "visible"
+            }
+          }
+        ]
+      }
+    }
+  }
+}
