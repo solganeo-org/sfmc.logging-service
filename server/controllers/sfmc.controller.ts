@@ -1,4 +1,5 @@
 import { Request, Response } from 'express'
+import { LogData } from '../config'
 
 function save(req: Request, res: Response) {
   console.log('Saving ...')
@@ -28,6 +29,34 @@ function execute(req: Request, res: Response) {
   console.log('Executing ...')
 
   const args: any = req.body.inArguments[0]
+
+  const contactId: string = args.contactId;
+  const publicationId: string = args.publicationId;
+  const dataExtensionName: string = args.UIDEName;
+
+  const subscriberKey: string = req.body.keyValue;
+  const journeyId: string = req.body.journeyId;
+  const versionId = "Version ID (?)"
+  const versionNumber: string = args.journeyVersion;
+  const journeyName = "TEST NAME";
+  const logName: string = args.UILogName;
+  const logDescription: string  = args.UILogDescription;
+  const logDate: Date = new Date();
+
+  const logData: LogData = {
+
+    subscriberKey,
+    journeyId,
+    versionId,
+    versionNumber,
+    journeyName,
+    logName,
+    logDescription,
+    logDate
+
+  }
+
+  console.log(logData)
 
   res.status(200).send('Execute')
 }
