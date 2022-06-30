@@ -2,7 +2,7 @@ import express, { Express, Request, Response } from 'express'
 import bodyParser from 'body-parser'
 
 import sfmc from './routes/sfmc.route'
-import {vars} from './config'
+import { vars } from './config'
 
 const app: Express = express()
 const port = vars.get('PORT') || 3000
@@ -22,5 +22,5 @@ app.get('/', (req: Request, res: Response) => {
 })
 
 app.listen(port, () => {
-  console.log(`⚡️[server]: Server is running at ${port}`);
-});
+  console.log(`⚡️[server]: Server is running at ${port}`)
+})

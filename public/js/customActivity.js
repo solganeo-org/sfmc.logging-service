@@ -77,7 +77,6 @@ define(['postmonger', 'lightning-lookup'], function (
 
     LoadAttributeSets(inArguments, true)
 
-
     connection.trigger('updateButton', {
       button: 'next',
       text: 'done',
@@ -110,28 +109,26 @@ define(['postmonger', 'lightning-lookup'], function (
       Spinner(true)
     }
 
-        if (!isInit) {
-          Spinner(false)
-        } else {
-          inArgument = inArguments[0]
+    if (!isInit) {
+      Spinner(false)
+    } else {
+      inArgument = inArguments[0]
 
-          console.log(inArgument)
+      console.log(inArgument)
 
-          if (inArguments.length > 0) {
+      if (inArguments.length > 0) {
+        // Log Input
+        inArguments[0].UILogName
+          ? ($('#text-input-log-name')[0].value = inArgument.UILogName)
+          : false
 
-            // Log Input
-            inArguments[0].UILogName
-              ? ($('#text-input-log-name')[0].value = inArgument.UILogName)
-              : false
-
-            inArguments[0].UILogName
-            ? ($('#text-input-log-description')[0].value = inArgument.UILogDescription)
-            : false
-          }
-        }
-      
+        inArguments[0].UILogName
+          ? ($('#text-input-log-description')[0].value =
+              inArgument.UILogDescription)
+          : false
+      }
+    }
   }
-
 
   function onGetTokens(tokens) {
     // Response: tokens = { token: <legacy token>, fuel2token: <fuel api token> }
@@ -145,14 +142,14 @@ define(['postmonger', 'lightning-lookup'], function (
   function onClickedNext() {
     Spinner(true)
 
-    let alertRequiredFields = $("#alert-required-fields");
-    alertRequiredFields.hide();
+    let alertRequiredFields = $('#alert-required-fields')
+    alertRequiredFields.hide()
 
     if (validateSave()) {
       Spinner(false)
 
-      let alertRequiredFields = $("#alert-required-fields");
-      alertRequiredFields.show();
+      let alertRequiredFields = $('#alert-required-fields')
+      alertRequiredFields.show()
 
       connection.trigger('ready')
       return
@@ -254,12 +251,11 @@ define(['postmonger', 'lightning-lookup'], function (
 
     Spinner(false)
 
-    arg.UIDEName = "Journey Logger Activities"
+    arg.UIDEName = 'Journey Logger Activities'
     arg.UILogName = $('#text-input-log-name')[0].value
     arg.UILogDescription = $('#text-input-log-description')[0].value
 
     inArgs.push(arg)
-
 
     payload['arguments'].execute.inArguments = inArgs
 
@@ -270,6 +266,4 @@ define(['postmonger', 'lightning-lookup'], function (
   function getMessage() {
     return $('#select1').find('option:selected').attr('value').trim()
   }
-
-  
 })
