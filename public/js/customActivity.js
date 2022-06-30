@@ -252,12 +252,13 @@ define(['postmonger', 'lightning-lookup'], function (
     arg.publicationID = '{{Context.PublicationId}}'
     arg.journeyVersion = '{{Context.VersionNumber}}'
 
-    inArgs.push(arg)
     Spinner(false)
 
     arg.UIDEName = "Journey Logger Activities"
     arg.UILogName = $('#text-input-log-name')[0].value
     arg.UILogDescription = $('#text-input-log-description')[0].value
+
+    inArgs.push(arg)
 
 
     payload['arguments'].execute.inArguments = inArgs
