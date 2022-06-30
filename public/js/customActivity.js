@@ -96,7 +96,6 @@ define(['postmonger', 'lightning-lookup'], function (
     }
   }
 
-
   function onGetTokens(tokens) {
     // Response: tokens = { token: <legacy token>, fuel2token: <fuel api token> }
     // console.log(tokens);
