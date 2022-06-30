@@ -2,6 +2,9 @@ import express, { Express, Request, Response } from 'express';
 import dotenv from 'dotenv';
 import bodyParser from 'body-parser'
 
+import sfmc from './routes/sfmc'
+
+
 dotenv.config();
 
 const app: Express = express();
@@ -20,5 +23,5 @@ app.get('/', (req: Request, res: Response) => {
 });
 
 app.listen(port, () => {
-  console.log(`⚡️[server]: Server is running at https://localhost:${port}`);
+  console.log(`⚡️[server]: Server is running at ${port}`);
 });

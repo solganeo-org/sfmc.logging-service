@@ -19,7 +19,7 @@
           "foundSignupDate": ""
         }
       ],
-      "url": "https://69e0-80-15-110-62.ngrok.io/sfmc/execute",
+      "url": "https://8944-80-15-110-62.ngrok.io/sfmc/execute",
       "verb": "POST",
       "body": "",
       "header": "",
@@ -30,22 +30,22 @@
   },
   "configurationArguments": {
     "save": {
-      "url": "https://69e0-80-15-110-62.ngrok.io/sfmc/save",
+      "url": "https://8944-80-15-110-62.ngrok.io/sfmc/save",
       "verb": "POST",
       "useJwt": true
     },
     "publish": {
-      "url": "https://69e0-80-15-110-62.ngrok.io/sfmc/publish",
+      "url": "https://8944-80-15-110-62.ngrok.io/sfmc/publish",
       "verb": "POST",
       "useJwt": true
     },
     "validate": {
-      "url": "https://69e0-80-15-110-62.ngrok.io/sfmc/validate",
+      "url": "https://8944-80-15-110-62.ngrok.io/sfmc/validate",
       "verb": "POST",
       "useJwt": true
     },
     "stop": {
-      "url": "https://69e0-80-15-110-62.ngrok.io/sfmc/stop",
+      "url": "https://8944-80-15-110-62.ngrok.io/sfmc/stop",
       "verb": "POST",
       "useJwt": true
     }
