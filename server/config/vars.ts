@@ -12,18 +12,39 @@ const vars = convict({
     env: 'NODE_ENV',
   },
 
-  PUBLIC_KEY: {
+  CLIENT_ID: {
     doc: 'Public Key Web Push',
     format: String,
     default: '',
-    env: 'PUBLIC_KEY',
+    env: 'CLIENT_ID',
   },
 
-  PRIVATE_KEY: {
+  CLIENT_SECRET: {
     doc: 'Private Key Web Push',
     format: String,
     default: '',
-    env: 'PRIVATE_KEY',
+    env: 'CLIENT_SECRET',
+  },
+
+  BASE_URI: {
+    doc: 'Base Uri to make HTTP requests',
+    format: String,
+    default: '',
+    env: 'BASE_URI',
+  },
+
+  SFMC_DATA_EXTENSION_EXTERNAL_KEY: {
+    doc: 'Log Data External Key',
+    format: String,
+    default: '',
+    env: 'SFMC_DATA_EXTENSION_EXTERNAL_KEY',
+  },
+
+  SFMC_AUTH_URL: {
+    doc: 'Auth Url',
+    format: String,
+    default: '',
+    env: 'SFMC_AUTH_URL',
   },
 
   PORT: {

@@ -11,6 +11,7 @@ define(['postmonger', 'lightning-lookup'], function (
   var eventDefinitionID = ''
 
   var journeydata = {}
+  var journeyName = ''
   var inArgument = {}
 
   var lastStepEnabled = false
@@ -85,9 +86,12 @@ define(['postmonger', 'lightning-lookup'], function (
   }
 
   function requestDataSources(dataSources) {
-    console.log('*** DataSources ***')
-    console.log(dataSources)
+    // console.log('*** DataSources ***')
+    // console.log(dataSources)
     journeydata = dataSources
+    journeyName = journeydata[0].name
+
+    console.log(journeyName)
   }
 
   function Spinner(show) {
@@ -248,6 +252,7 @@ define(['postmonger', 'lightning-lookup'], function (
     arg.contactId = '{{Contact.Id}}'
     arg.publicationID = '{{Context.PublicationId}}'
     arg.journeyVersion = '{{Context.VersionNumber}}'
+    arg.journeyName = journeyName
 
     Spinner(false)
 

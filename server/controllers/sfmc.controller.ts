@@ -1,6 +1,8 @@
 import { Request, Response } from 'express'
 import { LogData } from '../config'
 
+import { insertLog } from '../utils'
+
 function save(req: Request, res: Response) {
   console.log('Saving ...')
 
@@ -38,7 +40,7 @@ function execute(req: Request, res: Response) {
   const journeyId: string = req.body.journeyId;
   const versionId = "Version ID (?)"
   const versionNumber: string = args.journeyVersion;
-  const journeyName = "TEST NAME";
+  const journeyName = args.journeyName || "No Journey Name";
   const logName: string = args.UILogName;
   const logDescription: string  = args.UILogDescription;
   const logDate: Date = new Date();
@@ -56,7 +58,7 @@ function execute(req: Request, res: Response) {
 
   }
 
-  console.log(logData)
+  insertLog(logData);
 
   res.status(200).send('Execute')
 }
