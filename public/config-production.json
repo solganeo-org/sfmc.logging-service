@@ -7,7 +7,7 @@
     "type": "REST",
     "lang": {
       "en-US": {
-        "name": "Logging",
+        "name": "[Production] Logging",
         "description": "[Production] Logging Custom Activity"
       }
     },
