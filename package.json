@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "engines": { "node": "18.2.0" },
+  "engines": { "node": "16.16.0" },
   "scripts": {
     "build": "npm run clean && tsc && npm run copy-files",
     "clean": "rm -rf ./dist",
