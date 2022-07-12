@@ -150,6 +150,23 @@ Install ngrok from https://ngrok.com/download (If you have a free account you wi
 3. Install dependencies `npm install`
 4. Execute the application `npm run dev`
 
+## Run using Heroku
+
+1. Install Heroku cli https://devcenter.heroku.com/articles/heroku-cli
+2. Create `.env` file:
+
+```
+ENV=local
+CLIENT_ID=************qebix
+CLIENT_SECRET=************qTNRW9eDU
+BASE_URI=https://mcjnmn9mfnxq4m36wvmtt59plqg1.auth.marketingcloudapis.com/
+SFMC_DATA_EXTENSION_EXTERNAL_KEY=1807CA86-43DB-4A4B-884C-E3AA9183F2CC
+SFMC_AUTH_URL=https://mcjnmn9mfnxq4m36wvmtt59plqg1.auth.marketingcloudapis.com/v2/token
+PORT=3000
+```
+3. Run `npm run build` (This command will build the application by replacing .dist folder)
+4. Launch the app using `heroku local --env=./.env` or just `heroku local` if you dont want to specify any .env file. 🚀
+
 ## Documentation
 
 https://doc.clickup.com/20410493/d/h/kew3x-1242/78125a56d847928
