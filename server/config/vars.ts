@@ -9,7 +9,7 @@ const vars = convict({
     doc: 'The application environment.',
     format: ['production', 'development', 'test', 'local'],
     default: 'local',
-    env: 'NODE_ENV',
+    env: 'ENV',
   },
 
   CLIENT_ID: {
