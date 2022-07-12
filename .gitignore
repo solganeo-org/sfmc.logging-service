@@ -74,6 +74,7 @@ typings/
 
 # dotenv environment variables file
 .env
+.env.*
 .env.*.json
 .env.test
 
