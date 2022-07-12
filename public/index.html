@@ -5,7 +5,11 @@
     <meta charset="utf-8" />
     <title>Custom Journey Builder Activity</title>
 
-    <link rel="stylesheet" type="text/css" href="vendor/salesforce-lightning/assets/styles/salesforce-lightning-design-system.min.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="vendor/salesforce-lightning/assets/styles/salesforce-lightning-design-system.min.css"
+    />
 
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/require.js"></script>
@@ -36,22 +40,123 @@
     </style>
   </head>
   <body>
-
     <!-- Spinner -->
-      <div class="spinner" style="display: none;">
-        <div class="demo-only" >
-          <div role="status" class="spinner-custom slds-spinner slds-spinner_medium slds-spinner_brand">
-            <span class="slds-assistive-text">Loading</span>
-            <div class="slds-spinner__dot-a"></div>
-            <div class="slds-spinner__dot-b"></div>
+    <div class="spinner" style="display: none">
+      <div class="demo-only">
+        <div
+          role="status"
+          class="spinner-custom slds-spinner slds-spinner_medium slds-spinner_brand"
+        >
+          <span class="slds-assistive-text">Loading</span>
+          <div class="slds-spinner__dot-a"></div>
+          <div class="slds-spinner__dot-b"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Error Display -->
+
+    <div
+      class="slds-notify slds-notify_alert slds-alert_error"
+      role="alert"
+      style="display: none"
+      id="alert-required-fields"
+    >
+      <span class="slds-assistive-text">error</span>
+      <span
+        class="slds-icon_container slds-icon-utility-error slds-m-right_x-small"
+        title="Description of icon when needed"
+      >
+        <svg class="slds-icon slds-icon_x-small" aria-hidden="true">
+          <use
+            xlink:href="/vendor/salesforce-lightning/assets/icons/utility-sprite/svg/symbols.svg#error"
+          ></use>
+        </svg>
+      </span>
+      <h2>Please fill the following fields</h2>
+      <div class="slds-notify__close">
+        <button
+          class="slds-button slds-button_icon slds-button_icon-small slds-button_icon-inverse"
+          title="Close"
+        >
+          <svg class="slds-button__icon" aria-hidden="true">
+            <use
+              xlink:href="/vendor/salesforce-lightning/assets/icons/utility-sprite/svg/symbols.svg#close"
+            ></use>
+          </svg>
+          <span class="slds-assistive-text">Close</span>
+        </button>
+      </div>
+    </div>
+
+    <div>
+      <div
+        class="slds-text-heading_large slds-m-vertical_medium slds-m-vertical_medium slds-align_absolute-center"
+      >
+        LOGGING SERVICE
+      </div>
+
+      <div class="slds-border_top">
+        <!-- Content Input -->
+
+        <div
+          class="slds-form-element slds-form-element_stacked slds-m-vertical_medium"
+        >
+          <label class="slds-form-element__label" for="text-input-de-name">
+            <abbr class="slds-required" title="required">* </abbr>DE Name
+          </label>
+          <div class="slds-form-element__control">
+            <input
+              type="text"
+              id="text-input-de-name"
+              placeholder="DE Name ..."
+              required=""
+              class="slds-input required"
+              value="Journey Logger Activities"
+              disabled
+            />
+          </div>
+        </div>
+
+        <!-- Content Input -->
+
+        <div class="slds-form-element slds-form-element_stacked">
+          <label class="slds-form-element__label" for="text-input-log-name">
+            <abbr class="slds-required" title="required">* </abbr>Log
+            Name</label
+          >
+          <div class="slds-form-element__control">
+            <input
+              type="text"
+              id="text-input-log-name"
+              placeholder="Log Name ..."
+              required=""
+              class="slds-input required"
+            />
+          </div>
+        </div>
+
+        <!-- Content Input -->
+
+        <div class="slds-form-element slds-form-element_stacked">
+          <label
+            class="slds-form-element__label"
+            for="text-input-log-description"
+          >
+            <abbr class="slds-required" title="required">* </abbr>Log
+            Description</label
+          >
+          <div class="slds-form-element__control">
+            <input
+              type="text"
+              id="text-input-log-description"
+              placeholder="Log Description ..."
+              required=""
+              class="slds-input required"
+            />
           </div>
         </div>
       </div>
-
-    <div>
-
-      Logging
-
     </div>
   </body>
-</html> 
+</html>

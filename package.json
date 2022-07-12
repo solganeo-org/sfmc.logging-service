@@ -3,9 +3,15 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "engines": {
+    "node": "16.16.0"
+  },
   "scripts": {
-    "build": "npx tsc",
+    "build": "npm run clean && tsc && npm run copy-files",
+    "clean": "rm -rf ./dist",
     "start": " node dist/index.js",
+    "postinstall": "tsc",
+    "copy-files": "cp -r ./public/ ./dist/ && cp ./server/config/.env.local.json ./dist/config/",
     "dev": "ts-node-dev  --respawn ./server/index.ts",
     "lint": "eslint --ignore-path .eslintignore --ext .js,.ts .",
     "format": "prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json)\""
@@ -22,13 +28,24 @@
   },
   "homepage": "https://github.com/solganeo-org/sfmc.logging-service#readme",
   "devDependencies": {
+    "@types/convict": "^6.1.1",
     "@types/express": "^4.17.13",
     "@types/node": "^18.0.0",
+    "@types/uuid": "^8.3.4",
+    "@typescript-eslint/eslint-plugin": "^5.30.0",
+    "@typescript-eslint/parser": "^5.30.0",
+    "eslint": "^8.18.0",
+    "prettier": "^2.7.1",
     "ts-node-dev": "^2.0.0",
     "typescript": "^4.7.4"
   },
   "dependencies": {
+    "convict": "^6.2.3",
+    "convict-format-with-validator": "^6.2.0",
     "dotenv": "^16.0.1",
-    "express": "^4.18.1"
+    "express": "^4.18.1",
+    "fuel-rest": "^3.2.2",
+    "fuel-soap": "^2.2.4",
+    "uuid": "^8.3.2"
   }
 }
