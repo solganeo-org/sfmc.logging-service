@@ -1,11 +1,24 @@
 import express, { Express, Request, Response } from 'express'
 import bodyParser from 'body-parser'
+import fs from 'fs'
+import path from 'path'
 
 import sfmc from './routes/sfmc.route'
 import { vars } from './config'
 
 const app: Express = express()
 const port = vars.get('PORT') || 3000
+
+const sourceFilePath = path.join('public', 'config-' + vars.get('ENV') + '.json');
+const destinationFilePath =  path.join('public', 'config.json')
+
+// copy file
+fs.copyFile(sourceFilePath, destinationFilePath, (err) => {
+  if(err) throw err;
+
+  console.log('File: ' + sourceFilePath + ' pasted inside: ' + destinationFilePath);
+
+})
 
 app.use(express.static('public'))
 app.use(
