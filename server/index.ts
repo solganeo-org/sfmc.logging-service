@@ -12,6 +12,8 @@ const port = vars.get('PORT') || 3000
 const sourceFilePath = path.join('public', 'config-' + vars.get('ENV') + '.json');
 const destinationFilePath =  path.join('public', 'config.json')
 
+console.log(vars)
+
 // copy file
 fs.copyFile(sourceFilePath, destinationFilePath, (err) => {
   if(err) throw err;
